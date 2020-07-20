@@ -1,0 +1,10 @@
+[*.cs]
+
+# SA1101: Prefix local calls with this
+dotnet_diagnostic.SA1101.severity = none
+
+# ?
+dotnet_diagnostic.SA1633.severity = none
+
+# CA1822: Mark members as static
+dotnet_diagnostic.CA1822.severity = none

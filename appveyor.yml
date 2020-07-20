@@ -1,0 +1,40 @@
+  
+image:
+  - Visual Studio 2017
+
+pull_requests:
+  do_not_increment_build_number: true
+
+skip_branch_with_pr: true
+
+branches:
+  only:
+    - main
+    - develop
+
+test: off
+build: off
+
+environment:
+  COVERALLS_REPO_TOKEN:
+    secure: J3mMNYGWxSr+Fc7eLXxVPgv627AMVFIUl0JAt65dAJ7zUPaFnNaFO8e+S4/OGkiq
+  CODECOV_REPO_TOKEN:
+    secure: ZJuIZ8w5gxAhkRmMt7lJ9JPRsg/im571KK4q8f84S9ML9DWTr+W7wxc+BmI06Trq
+  #MYGET_API_KEY:
+  #  secure: j6rYrax7Ms3Fv7zDkX00i4KhKerBX7ZPT2zwicsz79V/kZpoGwwXMZvb2zqdoa/d
+  #MYGET_SOURCE: https://www.myget.org/F/nils-org/api/v2/package
+  #APPVEYOR_API_TOKEN:
+  #  secure: AohX9CnXkgOdFq0YqqKtQrGPKKg33XmzvpgAZPb+yO4=
+  #NUGET_API_KEY:
+  #  secure: u5B6dH7j3Jhsiu4VXD7uZDFrGHKCZC9DL2ahqyopCUGG/t7kTnecQVNxjeFnTluu
+  #NUGET_SOURCE: https://api.nuget.org/v2/package
+  #GITHUB_USERNAME: nils-a
+  #GITHUB_PASSWORD:
+  #  secure: 27NrybgoeU+CIo1RL4x3JYwQwqkeQXr8CpRLm6lp4ElhgWS4T5spWm3mqMFYyEhI
+  # Wyam ??
+
+build_script:
+  - ps: .\build.ps1 -Target AppVeyor -Verbosity Diagnostic
+
+cache:
+  - "tools -> recipe.cake,tools/packages.config"

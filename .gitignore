@@ -1,0 +1,11 @@
+bin
+*.user
+obj
+*.suo
+TestResults
+.vs
+lib/packages
+tools/*
+!tools/packages.config
+BuildArtifacts
+/.vscode
