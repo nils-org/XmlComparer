@@ -7,6 +7,24 @@ namespace XmlComparer
 
     /// <summary>
     /// The XmlComparer. Compares xml and returns differences.
+    /// <code>
+    /// <![CDATA[
+    /// var left = new XmlDocument();
+    /// left.Load("C:\temp\demo1.xml");
+    ///
+    /// var right = new XmlDocument();
+    ///     right.Load("C:\temp\demo2.xml");
+    ///
+    /// var comparer = new XmlComparer.Comparer(
+    ///   ignoreAttributeOrder: true,
+    ///   ignoreNamespace: true)
+    /// var differences = comparer.GetDifferences(left, right);
+    /// ]]>
+    /// </code>
+    /// <para>
+    /// See <see cref="Comparer.Comparer(bool, bool, bool, bool, bool, bool)">constructor</see>
+    /// for all configuration-properties.
+    /// </para>
     /// </summary>
     public class Comparer
     {
