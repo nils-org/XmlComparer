@@ -30,9 +30,9 @@ environment:
   GITHUB_USERNAME: nils-a
   GITHUB_PASSWORD:
     secure: 27NrybgoeU+CIo1RL4x3JYwQwqkeQXr8CpRLm6lp4ElhgWS4T5spWm3mqMFYyEhI
-  #NUGET_API_KEY:
-  #  secure: u5B6dH7j3Jhsiu4VXD7uZDFrGHKCZC9DL2ahqyopCUGG/t7kTnecQVNxjeFnTluu
-  #NUGET_SOURCE: https://api.nuget.org/v2/package
+  NUGET_API_KEY:
+    secure: u5B6dH7j3Jhsiu4VXD7uZDFrGHKCZC9DL2ahqyopCUGG/t7kTnecQVNxjeFnTluu
+  NUGET_SOURCE: https://api.nuget.org/v2/package
   
 
 build_script:

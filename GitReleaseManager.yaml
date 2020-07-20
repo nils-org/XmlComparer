@@ -3,7 +3,7 @@ create:
   footer-heading: Where to get it
   footer-content: >
     You can download this release from
-    [nuget](https://nuget.org/packages/nils-org-demo/{milestone}).
+    [nuget](https://nuget.org/packages/XmlComparer/{milestone}).
   footer-includes-milestone: true
   milestone-replace-text: "{milestone}"
 export:
