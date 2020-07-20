@@ -1,21 +1,19 @@
-﻿<!DOCTYPE html>
-<html>
-    <head>
+﻿<!DOCTYPE html><html><head>
         <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
-        <meta name="description" />
-        <meta name="keywords" content="static content generator,static site generator,static site,HTML,web development,.NET,C#,Razor,Markdown,YAML" />
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+        <meta name="description">
+        <meta name="keywords" content="static content generator,static site generator,static site,HTML,web development,.NET,C#,Razor,Markdown,YAML">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="shortcut icon" href="/XmlComparer/assets/img/favicon.ico" type="image/x-icon">
         <link rel="icon" href="/XmlComparer/assets/img/favicon.ico" type="image/x-icon">
-        <title>XmlComparer - XmlComparer</title>
+        <title>XmlComparer - API - XmlComparer Namespace</title>
         <link href="/XmlComparer/assets/css/highlight.css" rel="stylesheet">
-        <link href="/XmlComparer/assets/css/bootstrap/bootstrap.css" rel="stylesheet" />
-        <link href="/XmlComparer/assets/css/adminlte/AdminLTE.css" rel="stylesheet" />
-        <link href="/XmlComparer/assets/css/theme/theme.css" rel="stylesheet" />
+        <link href="/XmlComparer/assets/css/bootstrap/bootstrap.css" rel="stylesheet">
+        <link href="/XmlComparer/assets/css/adminlte/AdminLTE.css" rel="stylesheet">
+        <link href="/XmlComparer/assets/css/theme/theme.css" rel="stylesheet">
         <link href="//fonts.googleapis.com/css?family=Roboto+Mono:400,700|Roboto:400,400i,700,700i" rel="stylesheet">
         <link href="/XmlComparer/assets/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-        <link href="/XmlComparer/assets/css/override.css" rel="stylesheet" />
+        <link href="/XmlComparer/assets/css/override.css" rel="stylesheet">
         <script src="/XmlComparer/assets/js/jquery-2.2.3.min.js"></script>
         <script src="/XmlComparer/assets/js/bootstrap.min.js"></script>        
         <script src="/XmlComparer/assets/js/app.min.js"></script>         
@@ -31,7 +29,7 @@
 
         
     </head>
-    <body class="hold-transition wyam layout-boxed layout-top-nav no-gutter">    
+    <body class="hold-transition wyam layout-boxed  ">    
         <div class="top-banner"></div>
         <div class="wrapper with-container">
             <!-- Header -->
@@ -43,6 +41,10 @@
                          
                 <nav class="navbar navbar-static-top" role="navigation">
                     <!-- Sidebar toggle button-->
+                        <a href="#" class="sidebar-toggle visible-xs-block" data-toggle="offcanvas" role="button">
+                            <span class="sr-only">Toggle side menu</span>
+                            <i class="fa fa-chevron-circle-right"></i>
+                        </a>
                                         
                     <div class="navbar-header">
                         <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse">
@@ -54,7 +56,7 @@
                     <!-- Collect the nav links, forms, and other content for toggling -->
                     <div class="collapse navbar-collapse pull-left" id="navbar-collapse">
                         <ul class="nav navbar-nav">                            
-                                    <li><a href="/XmlComparer/api">API</a></li>
+                                    <li class="active"><a href="/XmlComparer/api">API</a></li>
  
                         </ul>       
                     </div>
@@ -65,19 +67,72 @@
             </header>
             
             <!-- Left side column. contains the logo and sidebar -->
-            <aside class="main-sidebar hidden">
+            <aside class="main-sidebar ">
                 <section class="infobar" data-spy="affix" data-offset-top="60" data-offset-bottom="200"> 
                     	
-        <div><p><a href="https://github.com/nils-org/XmlComparer/tree/develop/docs/input/index.cshtml"><i class="fa fa-pencil-square" aria-hidden="true"></i> Edit Content</a></p></div>
-    <div id="infobar-headings"></div>
+	<div id="infobar-headings"><h6>On This Page</h6><p><a href="#ClassTypes">Class Types</a></p>
+<p><a href="#EnumTypes">Enum Types</a></p>
+<hr class="infobar-hidden">
+</div>
 
                 </section>
                 <section class="sidebar">    
                                      
-                    
+                    	
+	    <script src="/XmlComparer/assets/js/lunr.min.js"></script>
+    <script src="/XmlComparer/assets/js/searchIndex.js"></script>
+    <div class="sidebar-form">
+        <div class="input-group">
+            <input type="text" name="search" id="search" class="form-control" placeholder="Search Types...">
+            <span class="input-group-btn">
+                <button class="btn btn-flat"><i class="fa fa-search"></i></button>
+            </span>
+        </div>
+    </div>
+    <div id="search-results">
+    </div>
+    <script>
+        function runSearch(query){
+            $("#search-results").empty();			
+            if( query.length < 2 ){
+                return;
+            }			
+            var results = searchModule.search("*" + query + "*");
+            var listHtml = "<ul class='sidebar-menu'>";	
+            listHtml += "<li class='header'>Type Results</li>";	
+            if(results.length == 0 ){
+                listHtml += "<li>No results found</li>";
+            } else {					
+                for(var i = 0; i < results.length; ++i){
+                    var res = results[i];
+                    listHtml += "<li><a href='" + res.url + "'>" + htmlEscape(res.title) + "</a></li>";
+                }				
+            }
+            listHtml += "</ul>";				
+            $("#search-results").append(listHtml);
+        }
+
+        $(document).ready(function(){
+            $("#search").on('input propertychange paste', function() {
+                runSearch($("#search").val());
+            });
+        });
+
+        function htmlEscape(html) {
+            return document.createElement('div')
+                .appendChild(document.createTextNode(html))
+                .parentNode
+                .innerHTML;
+        }
+    </script>
+	
+    <hr>
 
                     <ul class="sidebar-menu">
                         
+	<li class="header">Namespaces</li>   
+			<li class=" selected"><a href="/XmlComparer/api/XmlComparer">XmlComparer</a></li>
+      
 
                     </ul>
                             
@@ -90,28 +145,91 @@
 
 
 
-		<section class="content-header">
-			<h1>XmlComparer</h1>
-		</section>
-	<section class="content">
-		<script>
-if(!document.location.href.endsWith("/")){
-  document.location.href = document.location.href + "/"; // or else the relative hyperlinks won't work...
-}
-</script>
-<div class="container">				
-	<h1>What is it?</h1>
-    <p>
-        XmlComparer is a simple library to compare two xml-nodes and get the differences.
-    </p>
-</div>
-<div class="container">
-	<h1>Usage</h1>
-  <div>
-  Check the documentation on <a href="api/XmlComparer/Comparer/">Comparer</a>.
-  </div>
-</div>
-	</section>
+<section class="content-header">
+	<h1>XmlComparer <small>Namespace</small></h1>
+</section>
+<section class="content">
+	
+	
+	
+
+
+			<h1 id="ClassTypes">Class Types</h1>
+			<div class="box">
+				<div class="box-body no-padding table-responsive">
+					<table class="table table-striped table-hover two-cols">
+						<thead>
+							<tr>
+								<th>Class</th>
+									<th>Summary</th>
+							</tr>
+						</thead>
+							<tbody><tr>
+								<td><a href="/XmlComparer/api/XmlComparer/Comparer">Comparer</a></td>
+									<td>
+     The XmlComparer. Compares xml and returns differences.
+     <pre><code class="cs"> var left = new XmlDocument();
+ left.Load("C:\temp\demo1.xml");
+
+ var right = new XmlDocument();
+     right.Load("C:\temp\demo2.xml");
+
+ var comparer = new XmlComparer.Comparer(
+   ignoreAttributeOrder: true,
+   ignoreNamespace: true)
+ var differences = comparer.GetDifferences(left, right);</code></pre>
+     <p>
+     See <code class="cs"><a href="/XmlComparer/api/XmlComparer/Comparer/CCD9FE66">Comparer(bool, bool, bool, bool, bool, bool)</a></code>
+     for all configuration-properties.
+     </p>
+     </td>
+							</tr>
+							<tr>
+								<td><a href="/XmlComparer/api/XmlComparer/UncomparableNodeException">Uncomparable<wbr>Node<wbr>Exception</a></td>
+									<td>
+    The nodes supplied are not comparable.
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/XmlComparer/api/XmlComparer/XmlDifference">XmlDifference</a></td>
+									<td>
+    A single difference between two xml-Files.
+    </td>
+							</tr>
+					</tbody></table>
+				</div>
+			</div>
+		
+
+			<h1 id="EnumTypes">Enum Types</h1>
+			<div class="box">
+				<div class="box-body no-padding table-responsive">
+					<table class="table table-striped table-hover two-cols">
+						<thead>
+							<tr>
+								<th>Enum</th>
+									<th>Summary</th>
+							</tr>
+						</thead>
+							<tbody><tr>
+								<td><a href="/XmlComparer/api/XmlComparer/DifferenceSource">DifferenceSource</a></td>
+									<td>
+    The source of the difference.
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/XmlComparer/api/XmlComparer/DifferenceType">DifferenceType</a></td>
+									<td>
+    Types of differences.
+    </td>
+							</tr>
+					</tbody></table>
+				</div>
+			</div>
+		
+
+	
+</section>
                 
             </div>           
             
@@ -196,5 +314,5 @@ if(!document.location.href.endsWith("/")){
                 }, 500);
             });
         </script>
-    </body>
-</html>
+    
+</body></html>
