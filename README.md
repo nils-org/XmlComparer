@@ -10,12 +10,19 @@
 
 ## Table of Contents
 
+- [Status](#status)
 - [Install](#install)
 - [Usage](#usage)
 - [Maintainer](#maintainer)
 - [Contributing](#contributing)
   - [Contributors](#contributors)
 - [License](#license)
+
+## Status
+
+I'll archive this project. I started it because I did not do enough research in the first place.
+
+If someone comes here in need of a good XML comparer, please consider using https://github.com/BrutalSimplicity/XmlDiffLib
 
 ## Install
 
